@@ -1,5 +1,6 @@
 import streamlit as st
-import archs.unet_arch as unet_arch
+import src.archs.unet_arch as unet_arch
+import src.archs.deeplab_arch as deeplab_arch
 import torch
 device = "cuda" if torch.cuda.is_available() else "cpu"
 from PIL import Image
@@ -9,13 +10,19 @@ from main import generate_mask_img, get_image_from_array
 st.title("Semantic Segmentation of Flood Images")
 
 # Select the model architecture
-model_arch = st.selectbox("Select the model", ["Unet", "Unet++", "Segnet", "PSPNet", "DeepLabV3+"])
+model_arch = st.selectbox("Select the model", ["Unet", "DeepLabV3"])
 
 # Load the model
 if model_arch == "Unet":
     model = unet_arch.UNET(in_channels=3, out_channels=1).to(device)
+    checkpoint = torch.load("src/models/deeplab-01.pth.tar")
+    model.load_state_dict(checkpoint["state_dict"])
+    
+elif model_arch == "DeepLabV3":
+    model = deeplab_arch.DeepLabV3().to(device)
     checkpoint = torch.load("src/models/unet-01.pth.tar")
     model.load_state_dict(checkpoint["state_dict"])
+    
 else:
     model = unet_arch.UNET(in_channels=3, out_channels=1).to(device)
     checkpoint = torch.load("src/models/unet-01.pth.tar")
