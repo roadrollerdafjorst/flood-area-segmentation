@@ -14,11 +14,11 @@ model_arch = st.selectbox("Select the model", ["Unet", "Unet++", "Segnet", "PSPN
 # Load the model
 if model_arch == "Unet":
     model = unet_arch.UNET(in_channels=3, out_channels=1).to(device)
-    checkpoint = torch.load("models/unet-01.pth.tar")
+    checkpoint = torch.load("src/models/unet-01.pth.tar")
     model.load_state_dict(checkpoint["state_dict"])
 else:
     model = unet_arch.UNET(in_channels=3, out_channels=1).to(device)
-    checkpoint = torch.load("models/unet-01.pth.tar")
+    checkpoint = torch.load("src/models/unet-01.pth.tar")
     model.load_state_dict(checkpoint["state_dict"])
 
 file = st.file_uploader("Upload Image", type=["jpg", "png", "jpeg"])
