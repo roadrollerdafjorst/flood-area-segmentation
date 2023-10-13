@@ -29,16 +29,10 @@ To install and run the flood area segmentation application, follow these steps:
     pip install -r requirements.txt
     ```
 
-3. Change directory to src.
-
-   ```bash
-   cd src
-   ```
-
 5. Run the application:
 
     ```bash
-    python app.py
+    streamlit run app.py
     ```
 
 ## Usage
