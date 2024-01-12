@@ -2,16 +2,13 @@
 
 ## Introduction
 
-This project presents a flood area segmentation application using SOTA deep learning models, including UNet and DeepLabV3. The application processes satellite and aerial images, identifying and highlighting flood-affected regions with high precision. By leveraging these models, I have achieved DICE scores of 0.82 with UNet and 0.86 with DeepLabV3.
+This project focuses on developing a flood area segmentation application using well-established deep learning models such as UNet and DeepLabV3. The application processes satellite and aerial images to identify and highlight flood-affected regions with precision. The achieved DICE scores of 0.82 with UNet and 0.86 with DeepLabV3 showcase the effectiveness of the models in this context.
 
 ## Features
 
-- **Semantic Segmentation:** Utilizes deep learning models (UNet and DeepLabV3) for precise semantic segmentation of flood-affected regions.
-- **Satellite and Aerial Image Support:** Process both satellite and aerial images to identify flood-affected areas.
-- **High Precision:** Achieved high DICE scores (0.82 with UNet, 0.86 with DeepLabV3) to ensure accurate flood area identification.
-- **Easy-to-Use:** User-friendly interface for users to perform flood area segmentation on their own datasets.
-- **Customization:** Flexible parameters and model choices for users to fine-tune the segmentation process.
-- **Open Source:** This project is open source, allowing for contributions from the community to further improve flood area segmentation.
+- **Semantic Segmentation:** Utilizes widely recognized deep learning models (UNet and DeepLabV3) for precise semantic segmentation of flood-affected regions.
+- **Satellite and Aerial Image Support:** Processes both satellite and aerial images for identifying flood-affected areas.
+- **High Precision:** Attains competitive DICE scores (0.82 with UNet, 0.86 with DeepLabV3) for accurate flood area identification.
 
 ## Installation
 
@@ -29,7 +26,7 @@ To install and run the flood area segmentation application, follow these steps:
     pip install -r requirements.txt
     ```
 
-5. Run the application:
+3. Run the application:
 
     ```bash
     streamlit run app.py
@@ -47,11 +44,11 @@ To install and run the flood area segmentation application, follow these steps:
 
 5. The segmented image will be displayed, with flood-affected regions highlighted.
 
-6. You can save the segmented image or further analyze the results as needed.
+6. Save the segmented image or conduct further analysis as needed.
 
 ## Results
 
-The deep learning models utilized in this project have produced impressive results:
+The deep learning models used in this project have demonstrated commendable results:
 
 - UNet: DICE Score of 0.82
 - DeepLabV3: DICE Score of 0.86
